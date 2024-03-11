@@ -2,9 +2,9 @@
   "name": "eosi-api",
   "version": "1.0.0",
   "description": "eosi-api",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src/index.ts"
   },
   "author": "",
   "license": "ISC",
