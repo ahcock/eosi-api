@@ -1,17 +1,13 @@
 import jwt, { JwtPayload } from "jsonwebtoken";
 import { NextFunction, Request, Response } from "express";
 import bcrypt from "bcrypt";
+import { User } from "../types/user.type";
 
-type User = {
-  id: string;
-  username: string;
-};
-
-const comparePassword = (password: string | Buffer, hash: string) => {
+export const comparePassword = (password: string | Buffer, hash: string) => {
   return bcrypt.compare(password, hash);
 };
 
-const hashPassword = (password: string) => {
+export const hashPassword = (password: string) => {
   // 더 안전한 salt 사용을 위해 추후 바꿀 것.
 
   return bcrypt.hash(password, 5);
