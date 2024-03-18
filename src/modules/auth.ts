@@ -47,10 +47,12 @@ export const protect = (
   }
 
   try {
-    const user = jwt.verify(token, process.env.JWT_SCREET ?? "");
+    const user = jwt.verify(token, process.env.JWT_SECRET || "");
+
     req.user = user;
     next();
-  } catch {
+  } catch (error) {
+    console.log({ error });
     res.status(401);
     res.json({ message: "Not Valid Token" });
     return;

@@ -1,0 +1,26 @@
+### 회원가입
+POST http://localhost:3001/user
+Content-Type: application/json
+
+{
+  "username": "josh",
+  "password": "admin"
+}
+
+### 로그인
+POST http://localhost:3001/signin
+Content-Type: application/json
+
+{
+  "username": "josh",
+  "password": "admin"
+}
+
+### 프로덕트 PUT
+
+PUT http://localhost:3001/api/product/123123
+Content-Type: application/json
+Authorization: Bearer
+
+
+
