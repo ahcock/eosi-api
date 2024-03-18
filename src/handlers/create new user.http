@@ -20,7 +20,7 @@ Content-Type: application/json
 
 PUT http://localhost:3001/api/product/123123
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdmYzg5MzM0LTUzN2QtNDFiMi04NTc1LTg1MzY5ZTAxZjlkMyIsInVzZXJuYW1lIjoiam9zaCIsImlhdCI6MTcxMDc0NDQ5Mn0.Gs8o4fGnUrsmg_FG9mvadyYwfzOzLjahpm7sKFXiLJ8
+Authorization: Bearer
 
 
 
