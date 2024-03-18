@@ -18,7 +18,7 @@ export const createJWT = (user: User) => {
       id: user.id,
       username: user.username,
     },
-    process.env.JWT_TOKEN ?? "",
+    process.env.JWT_SECRET || "",
   );
   return token;
 };
