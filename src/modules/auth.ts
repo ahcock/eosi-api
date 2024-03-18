@@ -1,7 +1,7 @@
 import jwt, { JwtPayload } from "jsonwebtoken";
 import { NextFunction, Request, Response } from "express";
 import bcrypt from "bcrypt";
-import { User } from "../types/user.type";
+import type { User } from "@prisma/client";
 
 export const comparePassword = (password: string | Buffer, hash: string) => {
   return bcrypt.compare(password, hash);
@@ -18,7 +18,7 @@ export const createJWT = (user: User) => {
       id: user.id,
       username: user.username,
     },
-    process.env.JWT_TOKEN ?? "",
+    process.env.JWT_SECRET || "",
   );
   return token;
 };
