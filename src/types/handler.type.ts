@@ -1,3 +1,3 @@
-import { Request, Response } from "express";
+import { RequestHandler } from "express";
 
-export type Handler<T = {}> = (req: Request & T, res: Response) => any;
+export type Handler<T = {}> = RequestHandler<any, any, T>;
