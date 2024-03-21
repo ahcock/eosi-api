@@ -15,7 +15,7 @@ export const getProducts: Handler<{ user: User }> = async (req, res) => {
 };
 
 export const getOneProduct: Handler<{ user: User }> = async (req, res) => {
-  const productId = req.query.id;
+  const productId = req.params.id;
 
   const product = await prisma.product.findUnique({
     where: {
@@ -27,11 +27,9 @@ export const getOneProduct: Handler<{ user: User }> = async (req, res) => {
   res.json({ data: product });
 };
 
-export const createProduct: Handler<{ product: Product }> = async (
-  req,
-  res,
-) => {
-  const { name, belongsToId } = req.body.product;
+export const createProduct: Handler<Product> = async (req, res) => {
+  const { name, belongsToId } = req.body;
+
   const result = await prisma.product.create({
     data: {
       name,
@@ -42,16 +40,13 @@ export const createProduct: Handler<{ product: Product }> = async (
   res.json({ data: result });
 };
 
-export const updateProduct: Handler<{ product: Product }> = async (
-  req,
-  res,
-) => {
+export const updateProduct: Handler<Product> = async (req, res) => {
   const updated = await prisma.product.update({
     where: {
       id: req.params.id,
     },
     data: {
-      name: req.body.product.name,
+      name: req.body.name,
     },
   });
 
