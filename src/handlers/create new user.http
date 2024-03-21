@@ -16,11 +16,60 @@ Content-Type: application/json
   "password": "admin"
 }
 
+### 모든 프로덕트를 GET
+GET http://localhost:3001/api/product
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdmYzg5MzM0LTUzN2QtNDFiMi04NTc1LTg1MzY5ZTAxZjlkMyIsInVzZXJuYW1lIjoiam9zaCIsImlhdCI6MTcxMDkxMjAzN30.ehoqiS0skZUozOeZAhfvDUJgs8uNPxEUNnQ8uz_MCyY
+
+{
+  "user": {
+    "id": "7fc89334-537d-41b2-8575-85369e01f9d3"
+  }
+}
+
+### 프로덕트 한개만 GET
+GET http://localhost:3001/api/product/1ede861a-e49e-4dc7-a064-6d977572a86c
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdmYzg5MzM0LTUzN2QtNDFiMi04NTc1LTg1MzY5ZTAxZjlkMyIsInVzZXJuYW1lIjoiam9zaCIsImlhdCI6MTcxMDkxMjAzN30.ehoqiS0skZUozOeZAhfvDUJgs8uNPxEUNnQ8uz_MCyY
+
+{
+  "user": {
+    "id": "7fc89334-537d-41b2-8575-85369e01f9d3"
+  }
+}
+
+
+
+### createProduct 테스트
+POST http://localhost:3001/api/product
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdmYzg5MzM0LTUzN2QtNDFiMi04NTc1LTg1MzY5ZTAxZjlkMyIsInVzZXJuYW1lIjoiam9zaCIsImlhdCI6MTcxMDkxMjAzN30.ehoqiS0skZUozOeZAhfvDUJgs8uNPxEUNnQ8uz_MCyY
+
+{
+  "name": "새 프로덕트를 생성합니다.",
+  "belongsToId": "7fc89334-537d-41b2-8575-85369e01f9d3"
+}
+
+
 ### 프로덕트 PUT
 
-PUT http://localhost:3001/api/product/123123
+PUT http://localhost:3001/api/product/1ede861a-e49e-4dc7-a064-6d977572a86c
 Content-Type: application/json
-Authorization: Bearer
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdmYzg5MzM0LTUzN2QtNDFiMi04NTc1LTg1MzY5ZTAxZjlkMyIsInVzZXJuYW1lIjoiam9zaCIsImlhdCI6MTcxMDkxMjAzN30.ehoqiS0skZUozOeZAhfvDUJgs8uNPxEUNnQ8uz_MCyY
+
+{
+  "name": "이것이 업데이트된 새로운 프로덕트다!"
+}
 
 
+### 프로덕트 DELETE
+DELETE http://localhost:3001/api/product/1ede861a-e49e-4dc7-a064-6d977572a86c
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdmYzg5MzM0LTUzN2QtNDFiMi04NTc1LTg1MzY5ZTAxZjlkMyIsInVzZXJuYW1lIjoiam9zaCIsImlhdCI6MTcxMDkxMjAzN30.ehoqiS0skZUozOeZAhfvDUJgs8uNPxEUNnQ8uz_MCyY
+
+{
+  "user": {
+    "id": "7fc89334-537d-41b2-8575-85369e01f9d3"
+  }
+}
 
