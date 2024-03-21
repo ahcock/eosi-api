@@ -9,6 +9,5 @@ export const handleInputError: Middleware = (req, res, next) => {
     res.json({ errors: error.array() });
   } else {
     next();
-    res.json({ message: "여기는 미들웨어" });
   }
 };
