@@ -5,8 +5,10 @@ import { protect } from "./modules/auth";
 import { createNewUser, signin } from "./handlers/user";
 
 const app = express();
-app.use(express.json());
+
 app.use(morgan("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", protect, router);
 
